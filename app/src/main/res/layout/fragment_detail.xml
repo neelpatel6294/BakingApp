@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/detailLayout"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <com.google.android.exoplayer2.ui.SimpleExoPlayerView
+        android:id="@+id/recipe_step_video"
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/recipe_step_desc_card"
+        android:layout_width="0dp"
+        android:layout_height="230dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recipe_step_video">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/recipe_image"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:scaleType="fitCenter"
+                tools:ignore="ContentDescription"
+                android:src="@drawable/thumb" />
+
+            <TextView
+                android:id="@+id/recipe_short_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:textColor="#5e35b1"
+                android:textSize="16sp"
+                android:fontFamily="monospace"
+                android:textStyle="bold"
+                tools:text="Short_description" />
+            <ScrollView
+                android:id="@+id/scrollView2"
+                android:layout_width="match_parent"
+                android:layout_height="116dp">
+
+                <TextView
+                    android:id="@+id/recipe_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="116dp"
+                    android:fontFamily="serif-monospace"
+                    android:padding="10dp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    tools:text="Steps_description" />
+            </ScrollView>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <Button
+        android:id="@+id/prev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="44dp"
+        android:text="Previous"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
+        android:text="Next"
+        app:layout_constraintBaseline_toBaselineOf="@+id/prev"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
